@@ -1,0 +1,54 @@
+@import "variables";
+
+.word-zone{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: calc(100vh - 85px);
+  background: $base-color1;
+  overflow-x: clip;
+  overflow-y: scroll;
+  position: relative;
+  top: 80px;
+  bottom: 50px;
+  scroll-behavior: smooth;
+}
+.word-zone1{
+  width: 50vw;
+}
+.add-word{
+  height: 5vh;
+  width:100%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: #696C71;
+  cursor: pointer;
+;
+}
+.word-zone-inner{
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .word-zone-inner {
+    width: 90%;
+  }
+}
+
+.no-words{
+  margin-top: 20px;
+  user-select: none;
+  font-family: 'Fredoka One', cursive;
+  font-size: 3rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}

@@ -1,0 +1,76 @@
+@import "variables";
+
+.word{
+  width: 100%;
+  height: 8vh;
+  margin-bottom: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $base-color11;
+  border-radius: 12px;
+  padding: 7.5px 20px 7.5px 20px;
+  transition: 0.25s;
+}
+.word-left{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+.word-header{
+
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+
+}
+.word-header-txt{
+  font-size: 1.75rem;
+  height: 100%;
+}
+.word-transcription{
+  margin-left: 10px;
+  color:$base-color5;
+  font-size: 1.6rem;
+  height: 100%;
+  width: 20%;
+}
+.word-meanings{
+  height: 50%;
+  width: 100%;
+  font-size: 1.5rem;
+}
+.word-right{
+  width: 80px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.word-icon1{
+  display: none;
+  height: 32px;
+  width: 32px;
+  background-image: url("../assets/extra-menu.png");
+  cursor: pointer;
+}
+.word-icon2{
+  display: none;
+  height: 32px;
+  width:32px;
+  background-image: url("../assets/delete.png");
+  cursor: pointer;
+}
+
+.word:hover .word-icon1{
+  display: block;
+}
+.word:hover .word-icon2{
+  display: block;
+}

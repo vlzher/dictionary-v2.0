@@ -1,0 +1,48 @@
+@import "variables";
+
+.header{
+  user-select: none;
+  height: 85px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left:0;
+  background: $base-color2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+
+.header-username{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  color: $base-color3;
+  width: 150px;
+  margin-right: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.left-div{
+  display: flex;
+  width: 10vw;
+  margin-left:2.5vw;
+  height: 60px;
+  align-items: center;
+  justify-content: space-around;
+
+
+}
+.right-div{
+  display: flex;
+  width: 20vw;
+  height: 60px;
+  justify-content: right;
+  margin-right:2.5vw;
+
+}
