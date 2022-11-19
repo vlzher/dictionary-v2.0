@@ -8,9 +8,9 @@ function App() {
     <div className="app">
         <Routes>
             <Route path="/registration" element={<RegistrationForm/>}/>
-            <Route path="/login" element={<LoginForm/>}/>
+            <Route path="/" element={<LoginForm/>}/>
             <Route path="/words" element={<Dictionary/>}/>
-            <Route path="*" element={<Navigate to={"/login"} replace/>}/>
+            <Route path="*" element={<Navigate to={"/"} replace/>}/>
         </Routes>
     </div>
   );
