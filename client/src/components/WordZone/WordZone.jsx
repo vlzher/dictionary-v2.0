@@ -37,19 +37,19 @@ const WordZone = () => {
         const reverse = data.reverse()
         addWords(reverse)
     }
-
+    function fetchWords(){
+        cleanWords()
+        const api = apiLink+"/api/words"
+        const token = user.token;
+        axios.get(api,{headers: { Authorization: `Bearer ${token}` }})
+            .then(res => {
+                addWords1(res.data)})
+    }
 
     useEffect(()=>{
-        function fetchWords(){
-            cleanWords()
-            const api = apiLink+"/api/words"
-            const token = user.token;
-            axios.get(api,{headers: { Authorization: `Bearer ${token}` }})
-                .then(res => {
-                    addWords1(res.data)})
-        }
         fetchWords()
-    })
+        // eslint-disable-next-line
+    },[])
 
     function deleteWord(id) {
         removeWord(id)
