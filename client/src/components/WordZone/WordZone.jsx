@@ -7,15 +7,16 @@ import {apiLink} from "../../assets/fakewords";
 import AddWordModal from "./AddWordModal";
 import axios from "axios";
 import {useActions} from "../../hooks/useActions";
-import {addWord} from "../../store/action-creator/word";
 const WordZone = () => {
     const user = useSelector((state => state.user))
     const words = useSelector(state => state.words)
     const [activeModal, setActiveModal] = useState(false);
     const [currentWord, setCurrentWord] = useState({});
+
     const [searchTerm, setSearchTerm] = useState("");
     const [position, setPosition] = useState(-1);
     const {addWords,cleanWords,removeWord} = useActions();
+    // eslint-disable-next-line
     const filteredWords = words.filter((word) =>{
         if(searchTerm === "") return word
         else if(word.word.toLowerCase().includes(searchTerm.toLowerCase())) return word
@@ -36,18 +37,19 @@ const WordZone = () => {
         const reverse = data.reverse()
         addWords(reverse)
     }
-    function fetchWords(){
-        cleanWords()
-        const api = apiLink+"/api/words"
-        const token = user.token;
-        axios.get(api,{headers: { Authorization: `Bearer ${token}` }})
-            .then(res => {
-                addWords1(res.data)})
-    }
+
 
     useEffect(()=>{
+        function fetchWords(){
+            cleanWords()
+            const api = apiLink+"/api/words"
+            const token = user.token;
+            axios.get(api,{headers: { Authorization: `Bearer ${token}` }})
+                .then(res => {
+                    addWords1(res.data)})
+        }
         fetchWords()
-    },[])
+    })
 
     function deleteWord(id) {
         removeWord(id)
@@ -63,7 +65,7 @@ const WordZone = () => {
                 <div className="add-word" onClick={() => addNewWord()}>
                     + NEW WORD
                 </div>
-                <SearchZone/>
+                <SearchZone searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
 
                 <div className="word-zone-inner">
 

@@ -20,7 +20,7 @@ const LoginForm = () => {
 
     function singIn() {
         try{
-            const res = axios.post(`${apiLink}/api/auth/login`,{
+            axios.post(`${apiLink}/api/auth/login`,{
                 "email": email,
                 "password": password,
             }).then((res)=> updateData(res.data)).then(() => navigate('/words'))

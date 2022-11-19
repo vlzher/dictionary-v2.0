@@ -11,7 +11,7 @@ const RegistrationForm = () => {
     const [password, setPassword] = useState("")
 
     async function singUp() {
-        const res = await axios.post(
+        await axios.post(
             `${apiLink}/api/auth/register`,
             {
                 "email": email, "password": password, "username": username

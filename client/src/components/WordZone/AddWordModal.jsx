@@ -9,6 +9,7 @@ import {useSelector} from "react-redux";
 const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
     const user = useSelector(state => state.user)
     const {addWord} = useActions();
+    // eslint-disable-next-line no-unused-vars
     const [word,setWord] = useState({});
     const [original, setOriginal] = useState("");
     const [currentTranslation, setCurrentTranslation] = useState("")
@@ -79,6 +80,7 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
         }
 
     }
+    // eslint-disable-next-line no-unused-vars
     const enterHandler = useKey("Enter",addNewTranslation)
 
     function cleanClose() {

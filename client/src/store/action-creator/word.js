@@ -1,4 +1,4 @@
-import {userActions, wordActions} from "./actions";
+import {wordActions} from "./actions";
 
 export const addWords = (words) => {
     return (dispatch) => {
