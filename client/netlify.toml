@@ -1,0 +1,4 @@
+[[redicrects]]
+from = "/*"
+to = "/login"
+status = 200
