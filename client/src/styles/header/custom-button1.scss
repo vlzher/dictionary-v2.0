@@ -1,4 +1,4 @@
-@import "variables";
+@import "src/styles/variables";
 .custom-button1{
   display: flex;
   justify-content: center;
@@ -6,15 +6,16 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  outline: 4px solid $base-color1;
+  outline: 2px solid $base-color1;
   background-repeat: no-repeat;
   outline-offset: -1px;
   border:0;
   background-color: $base-color1;
   background-position: center;
-  transition: 0.15s;
+  transition: 0.1s;
   cursor: pointer;
 }
 .custom-button1:hover{
-  outline-color: $base-color3;
+  border: 3px solid $base-color3;
+  outline-color: $base-color2;
 }

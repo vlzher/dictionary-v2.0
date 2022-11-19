@@ -5,3 +5,14 @@ export const addUsername = (username) => {
         dispatch({type: userActions.ADD_USERNAME, payload: username})
     }
 }
+export const addToken = (token) => {
+    return (dispatch) => {
+        dispatch({type:userActions.ADD_TOKEN, payload:token})
+    }
+}
+export const logout = () => {
+    return(dispatch) => {
+        dispatch({type: userActions.LOGOUT})
+    }
+}
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/search-zone.scss"
+import "../../styles/word-zone/search-zone.scss"
 
 const SearchZone = ({searchTerm, setSearchTerm}) => {
     return (

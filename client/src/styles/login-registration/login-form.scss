@@ -1,0 +1,71 @@
+@import "../variables";
+.login{
+  background: $base-color9;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.login-active{
+  width:40%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 3% 3% 0 3%;
+  background: #F7FAFC;
+  border-radius: 10px;
+}
+.login-header{
+  display: flex;
+  width: 100%;
+  height: 15%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.login-header1{
+  display: flex;
+  width: 100%;
+  height: 60%;
+  justify-content: flex-start;
+  font-size: 3rem;
+  align-items: center;
+  margin-bottom: 2%;
+
+}
+.login-header2{
+  display: flex;
+  width: 100%;
+  height: 40%;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.25rem;
+  color: #3030306E;
+
+}
+.login1-zone{
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.login1-zone-text{
+  text-align: center;
+  font-size: 1.25rem;
+  margin-right: 5px;
+}
+.login1-link{
+  text-align: center;
+  font-size: 1.25rem;
+  margin-left: 5px;
+  color: #4299E1;
+
+}
+.login1-link:hover{
+  text-decoration: underline;
+}
+

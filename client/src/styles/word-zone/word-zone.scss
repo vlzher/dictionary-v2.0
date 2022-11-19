@@ -1,4 +1,4 @@
-@import "variables";
+@import "src/styles/variables";
 
 .word-zone{
   width: 100vw;
@@ -15,7 +15,7 @@
   scroll-behavior: smooth;
 }
 .word-zone1{
-  width: 50vw;
+  width: 40vw;
 }
 .add-word{
   height: 5vh;

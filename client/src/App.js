@@ -1,17 +1,17 @@
 import "./styles/app.scss"
-import Footer from "./components/Footer";
-import HeaderModal from "./components/HeaderModal";
-import WordSearch from "./components/WordSearch";
-import LoginModal from "./components/LoginModal";
-import WordZone from "./components/WordZone";
+import RegistrationForm from "./components/RegistrationLogin/RegistrationForm";
+import {Routes, Route, Navigate} from "react-router-dom";
+import LoginForm from "./components/RegistrationLogin/LoginForm";
+import Dictionary from "./components/Dictionary";
 function App() {
   return (
     <div className="app">
-        {/*<LoginModal/>*/}
-        <HeaderModal/>
-        <WordZone/>
-        {/*<WordSearch/>*/}
-        {/*<Footer/>*/}
+        <Routes>
+            <Route path="/registration" element={<RegistrationForm/>}/>
+            <Route path="/login" element={<LoginForm/>}/>
+            <Route path="/words" element={<Dictionary/>}/>
+            <Route path="*" element={<Navigate to={"/login"} replace/>}/>
+        </Routes>
     </div>
   );
 }

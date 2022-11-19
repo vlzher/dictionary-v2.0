@@ -1,4 +1,4 @@
-@import "variables";
+@import "src/styles/variables";
 
 .search-zone{
   width: 100%;
@@ -16,7 +16,7 @@
   height: 100%;
   background: $base-color11;
   border-radius: 15px;
-  background: url("../assets/magnifier.svg") no-repeat scroll 8px 15px;
+  background: url("../../assets/magnifier.svg") no-repeat scroll 8px 15px;
   padding-left:40px;
   font-size: 2rem;
   outline: none;
