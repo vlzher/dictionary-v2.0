@@ -12,7 +12,7 @@ function App() {
             <Route path="/" element={<StartForm/>}/>
             <Route path="/login" element={<LoginForm/>}/>
             <Route path="/words" element={<Dictionary/>}/>
-            <Route path="*" element={<Navigate to={"/login"} replace/>}/>
+            {/*<Route path="*" element={<Navigate to={"/login"} replace/>}/>*/}
         </Routes>
     </div>
   );
