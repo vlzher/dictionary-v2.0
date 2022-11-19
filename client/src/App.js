@@ -1,6 +1,6 @@
 import "./styles/app.scss"
 import RegistrationForm from "./components/RegistrationLogin/RegistrationForm";
-import {Routes, Route, Navigate} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import LoginForm from "./components/RegistrationLogin/LoginForm";
 import Dictionary from "./components/Dictionary";
 import StartForm from "./components/StartForm";
