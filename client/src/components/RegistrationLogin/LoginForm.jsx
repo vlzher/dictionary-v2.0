@@ -11,11 +11,15 @@ const LoginForm = () => {
     const [password, setPassword] = useState("")
     const {addUsername,addToken} = useActions()
     const navigate = useNavigate();
+    const [error, setError] = useState(false)
 
     function updateData(data){
         addUsername(data.username)
         addToken(data.accessToken)
 
+    }
+    const onFocus = () => {
+        setError(false)
     }
 
     function singIn() {
@@ -23,7 +27,9 @@ const LoginForm = () => {
             axios.post(`${apiLink}/api/auth/login`,{
                 "email": email,
                 "password": password,
-            }).then((res)=> updateData(res.data)).then(() => navigate('/words'))
+            }).then((res)=> updateData(res.data)).then(() => navigate('/words')).catch((error) => {
+                setError(true)
+            });
         }
         catch (e){
             console.log(e)
@@ -36,21 +42,15 @@ const LoginForm = () => {
             <div className="login-active">
                 <div className="login-header">
                     <p className="login-header1">
-                        {/*<span style='color: black'>*/}
-                        {/*    Join Us*/}
-                        {/*</span>*/}
-                        {/*<span style='color: #F16482'>*/}
-                        {/*    !*/}
-                        {/*</span>*/}
-                        Log in your Account
-
+                        Log in your Account<span style={{color:"#F16482"}}>!</span>
                     </p>
                     <div className="login-header2">
                         To Learn New Words!
                     </div>
                 </div>
-                <CustomInput2 header={"Email address"} value={email} onChange={(e) => setEmail(e.target.value)} type={"text"} placeholder={""} isRequired={true}/>
-                <CustomInput2 header={"Password"} value={password} onChange={(e) => setPassword(e.target.value)} type={"password"} placeholder={""} isRequired={true}/>
+                <CustomInput2 header={"Email address"} value={email} onChange={(e) => setEmail(e.target.value)} type={"text"} placeholder={""} isRequired={true} onFocus={()=> onFocus()}/>
+                <CustomInput2 header={"Password"} value={password} onChange={(e) => setPassword(e.target.value)} type={"password"} placeholder={""} isRequired={true} onFocus={()=>onFocus()}/>
+                {error && <div className={'err-msg'}>Incorrect email or password</div>}
                 <CustomButton2 onClick={()=> singIn()} text={"Sing In"}/>
                 <div className="login1-zone">
                     <div className="login1-zone-text">

@@ -33,6 +33,7 @@
   font-size: 3rem;
   align-items: center;
   margin-bottom: 2%;
+  font-weight: bold;
 
 }
 .registration-header2{
@@ -67,5 +68,17 @@
 }
 .login-link:hover{
   text-decoration: underline;
+}
+.err-msg{
+  align-self: center;
+    color: red;
+    font-size: 1vw;
+    padding: 0;
+}
+.success-msg{
+    align-self: center;
+    color: green;
+    font-size: 1vw;
+    padding: 0;
 }
 
