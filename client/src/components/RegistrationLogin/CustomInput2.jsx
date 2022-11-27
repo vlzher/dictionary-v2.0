@@ -1,6 +1,6 @@
 import React from 'react';
 import "../../styles/login-registration/input2.scss"
-const CustomInput2 = ({header, value,onChange,type,placeholder,isRequired}) => {
+const CustomInput2 = ({header, value,onChange,type,placeholder,isRequired,onFocus}) => {
     return (
         <div className="custom-input2-zone">
             <div className={"custom-input2-header"}>
@@ -15,6 +15,7 @@ const CustomInput2 = ({header, value,onChange,type,placeholder,isRequired}) => {
                 <input
                     value={value}
                     onChange={onChange}
+                    onFocus={onFocus}
                     type={type}
                     placeholder={placeholder}
                     className= "input2"

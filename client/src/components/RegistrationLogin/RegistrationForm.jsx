@@ -9,6 +9,8 @@ const RegistrationForm = () => {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState(false)
+    const [success, setSuccess] = useState(false)
 
     async function singUp() {
         await axios.post(
@@ -16,7 +18,15 @@ const RegistrationForm = () => {
             {
                 "email": email, "password": password, "username": username
             }
-        );
+        ).then((response) => {
+            setSuccess(true)
+        }).catch((error) => {
+            setError(true)
+        });
+    }
+    const onFocus = () => {
+        setError(false)
+        setSuccess(false)
     }
 
     return (
@@ -30,16 +40,18 @@ const RegistrationForm = () => {
                         {/*<span style='color: #F16482'>*/}
                         {/*    !*/}
                         {/*</span>*/}
-                        Join us!
+                        Join us<span style={{color:"#F16482"}}>!</span>
 
                     </p>
                     <div className="registration-header2">
-                        don't put off learning new words for later!
+                        Don't put off learning new words for later!
                     </div>
                 </div>
-                <CustomInput2 header={"Username"} value={username} onChange={(e) => setUsername(e.target.value)} type={"text"} placeholder={""} isRequired={true}/>
-                <CustomInput2 header={"Email address"} value={email} onChange={(e) => setEmail(e.target.value)} type={"text"} placeholder={""} isRequired={true}/>
-                <CustomInput2 header={"Password"} value={password} onChange={(e) => setPassword(e.target.value)} type={"password"} placeholder={""} isRequired={true}/>
+                <CustomInput2 header={"Username"} value={username} onChange={(e) => setUsername(e.target.value)} type={"text"} placeholder={""} isRequired={true} onFocus={()=>onFocus()}/>
+                <CustomInput2 header={"Email address"} value={email} onChange={(e) => setEmail(e.target.value)} type={"text"} placeholder={""} isRequired={true} onFocus={()=>onFocus()}/>
+                <CustomInput2 header={"Password"} value={password} onChange={(e) => setPassword(e.target.value)} type={"password"} placeholder={""} isRequired={true} onFocus={()=>onFocus()}/>
+                {error && <div className={'err-msg'}>Something went wrong.Please try again.</div>}
+                {success && <div className={'success-msg'}>Confirmation link was sent to your email.Please follow the instructions.</div>}
                 <CustomButton2 onClick={()=> singUp()} text={"Sign Up"}/>
                 <div className="login-zone">
                     <div className="login-zone-text">
