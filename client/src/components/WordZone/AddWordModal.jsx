@@ -88,8 +88,8 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
         setActiveModal(false)
     }
     const handleKeyDown = event => {
-
-        if (event.key === 'Enter') {
+        console.log(event.keyCode)
+        if (event.keyCode ===13) {
             addNewTranslation()
         }
     };
@@ -111,7 +111,7 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
                         value={currentTranslation}
                         onChange={(e)=>setCurrentTranslation(e.target.value)}
                         placeholder={"Translation"}
-                        type="submit"
+                        type="text"
                         onKeyDown={handleKeyDown}
                 />
                 <div className="word-translations">
