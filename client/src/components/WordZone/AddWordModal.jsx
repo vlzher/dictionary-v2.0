@@ -117,9 +117,9 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
                     {translations ? translations.map((translation,key) => <div key={key} className={"word-translation"}>{translation}</div> ) : ""}
                 </div>
                 <div className="button-save-zone">
-                    <div className="button-save" onClick={() => saveWord()}>
+                    <button className="button-save" type="submit" onClick={() => saveWord()}>
                         Save
-                    </div>
+                    </button>
                 </div>
 
 
