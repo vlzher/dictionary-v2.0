@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import '../../styles/word-zone/word-modal.scss'
 import CustomInput1 from "./CustomInput1";
 import {useActions} from "../../hooks/useActions";
-import {useKey} from "../../hooks/useKey";
 import axios from "axios";
 import {apiLink} from "../../assets/fakewords";
 import {useSelector} from "react-redux";
