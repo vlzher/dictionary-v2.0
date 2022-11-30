@@ -9,8 +9,8 @@
   container-type: inline-size;
 }
 .registration-active{
-  width:max(450px,40cqi);
-  height: 70cqb;
+  width:max(300px,40cqi);
+  height: max(500px,70cqb);
   display: flex;
   flex-direction: column;
   padding: max(2%,20px);
@@ -31,7 +31,7 @@
   width: 100%;
   height: 60%;
   justify-content: flex-start;
-  font-size: max(2rem,3cqi);
+  font-size: max(1.75rem,3.5cqi);
   align-items: center;
   margin-bottom: 2%;
   font-weight: bold;
@@ -43,7 +43,7 @@
   height: 40%;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1.25rem;
+  font-size: max(0.8rem,2.5cqi);
   color: #3030306E;
 
 }
