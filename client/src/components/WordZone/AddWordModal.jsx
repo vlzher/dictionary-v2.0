@@ -81,7 +81,7 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
 
     }
     // eslint-disable-next-line no-unused-vars
-    const enterHandler = useKey("Enter",addNewTranslation)
+    // const enterHandler = useKey("Enter",addNewTranslation)
 
     function cleanClose() {
         setOriginal("")
@@ -90,7 +90,11 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
         setWord({})
         setActiveModal(false)
     }
-
+    const handleKeyDown = event => {
+        if (event.key === 'Enter') {
+            addNewTranslation()
+        }
+    };
     return (
         <div className={activeModal ? "word-modal active" : "word-modal"} onClick={()=>setActiveModal(false)}>
             <div className={activeModal ? "word-modal-content active" : "word-modal-content"} onClick={e => e.stopPropagation()}>
@@ -110,6 +114,7 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
                         onChange={(e)=>setCurrentTranslation(e.target.value)}
                         placeholder={"Translation"}
                         type="text"
+                        onKeyDown={handleKeyDown}
                 />
                 <div className="word-translations">
                     {translations ? translations.map((translation,key) => <div key={key} className={"word-translation"}>{translation}</div> ) : ""}
