@@ -5,7 +5,8 @@ export const wordReducer = (state = initialState, action) => {
     let newState = [...state]
     switch(action.type){
         case(wordActions.ADD_WORD):
-            newState = newState.filter(word => word.id !== action.payload.word.id)
+            if(typeof action.payload.word.id !== "undefined") newState = newState.filter(word => word.id !== action.payload.word.id)
+
             if(action.payload.id !==-1){
                 newState.splice(action.payload.id,0,action.payload.word)
             }

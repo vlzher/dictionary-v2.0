@@ -4,12 +4,15 @@ const CustomInput2 = ({header, value,onChange,type,placeholder,isRequired,onFocu
     return (
         <div className="custom-input2-zone">
             <div className={"custom-input2-header"}>
-                <div className="custom-input2-header-text">
+                <p className="custom-input2-header-text">
                     {header}
-                </div>
-                <div className={isRequired ? "custom-input2-header-required active": "custom-input2-header-required"}>
-                    *
-                </div>
+                    {{isRequired}
+                    ?
+                    <span style={{color:"#F16482",whiteSpace:"pre"}}> *</span>
+                    :<span></span>}
+
+
+                </p>
             </div>
             <div className="input-zone2">
                 <input

@@ -18,8 +18,8 @@ const WordZone = () => {
     const {addWords,cleanWords,removeWord} = useActions();
     // eslint-disable-next-line
     const filteredWords = words.filter((word) =>{
-        if(searchTerm === "") return word
-        else if(word.word.toLowerCase().includes(searchTerm.toLowerCase())) return word
+        if(searchTerm === "") return true
+        else if(word.original.toLowerCase().includes(searchTerm.toLowerCase())) return true
     })
     function addNewWord(){
         setActiveModal(true)

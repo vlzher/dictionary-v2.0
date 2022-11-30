@@ -15,7 +15,7 @@
   height: 100%;
   background: $base-color11;
   border-radius: 15px;
-  font-size: 1vw;
+  font-size: max(1.5rem, 2cqi);
   outline: none;
 }
 .search-icon{

@@ -14,8 +14,10 @@
   background-position: center;
   transition: 0.1s;
   cursor: pointer;
+  margin-left: 5%;
 }
 .custom-button1:hover{
   border: 3px solid $base-color3;
   outline-color: $base-color2;
+  cursor: pointer;
 }

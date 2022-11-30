@@ -5,6 +5,7 @@ import "../../styles/login-registration/registration-from.scss"
 import axios from "axios";
 import {apiLink} from "../../assets/fakewords";
 import {Link} from "react-router-dom";
+import {useKey} from "../../hooks/useKey";
 const RegistrationForm = () => {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
@@ -28,18 +29,14 @@ const RegistrationForm = () => {
         setError(false)
         setSuccess(false)
     }
+    // eslint-disable-next-line no-unused-vars
+    const enterHandler = useKey("Enter",singUp)
 
     return (
         <div className="registration">
             <div className="registration-active">
                 <div className="registration-header">
                     <p className="registration-header1">
-                        {/*<span style='color: black'>*/}
-                        {/*    Join Us*/}
-                        {/*</span>*/}
-                        {/*<span style='color: #F16482'>*/}
-                        {/*    !*/}
-                        {/*</span>*/}
                         Join us<span style={{color:"#F16482"}}>!</span>
 
                     </p>

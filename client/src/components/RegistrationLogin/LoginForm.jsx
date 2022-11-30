@@ -6,6 +6,7 @@ import "../../styles/login-registration/login-form.scss"
 import axios from "axios";
 import {apiLink} from "../../assets/fakewords";
 import {useActions} from "../../hooks/useActions";
+import {useKey} from "../../hooks/useKey";
 const LoginForm = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -36,6 +37,8 @@ const LoginForm = () => {
         }
 
     }
+    // eslint-disable-next-line no-unused-vars
+    const enterHandler = useKey("Enter",singIn)
 
     return (
         <div className="login">

@@ -28,8 +28,8 @@
   margin-bottom: 5vh;
   border-radius: 20px;
   background-color: #FFFFFF;
-  height: 65vh;
-  width: 25vw;
+  height: max(550px,65vh);
+  width: max(325px,25vw);
   transform: scale(0.5);
   transition: 0.4s all;
 
@@ -69,9 +69,9 @@
   margin-top: 15px;
   display: grid;
   grid-template: repeat(5, 45px)/ 1fr 1fr;
-  gap: 15px 15px;
+  gap: 5% 5%;
   width: 100%;
-  height: 50%;
+
 
 }
 .button-save-zone{

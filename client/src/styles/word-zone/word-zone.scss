@@ -13,9 +13,10 @@
   top: 80px;
   bottom: 50px;
   scroll-behavior: smooth;
+  container-type: inline-block;
 }
 .word-zone1{
-  width: 40vw;
+  width: max(450px, 40cqi);
 }
 .add-word{
   height: 5vh;
@@ -37,19 +38,14 @@ margin-bottom: 10px;
   align-items: center;
 }
 
-@media screen and (max-width: 800px) {
-  .word-zone-inner {
-    width: 90%;
-  }
-}
-
 .no-words{
   margin-top: 20px;
   user-select: none;
   font-family: 'Fredoka One', cursive;
-  font-size: 3rem;
+  font-size: max(1.2rem,2cqi);
   width: 100vw;
   display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
   transition: 0.5s;
