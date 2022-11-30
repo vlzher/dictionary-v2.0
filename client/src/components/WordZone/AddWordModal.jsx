@@ -79,8 +79,6 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
         }
 
     }
-    // eslint-disable-next-line no-unused-vars
-    // const enterHandler = useKey("Enter",addNewTranslation)
 
     function cleanClose() {
         setOriginal("")
@@ -90,7 +88,7 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
         setActiveModal(false)
     }
     const handleKeyDown = event => {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' || event.key === 'Submit') {
             addNewTranslation()
         }
     };
