@@ -88,7 +88,7 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
         setActiveModal(false)
     }
     const handleKeyDown = event => {
-        if (event.keyCode ===13 || event.keyCode === 63) {
+        if (event.keyCode ===13 || event.keyCode === 66) {
             addNewTranslation()
         }
     };
