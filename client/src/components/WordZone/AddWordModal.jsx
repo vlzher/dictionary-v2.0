@@ -112,12 +112,13 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
                         placeholder={"Translation"}
                         type="text"
                         onKeyDown={handleKeyDown}
+                        onSubmit={addNewTranslation}
                 />
                 <div className="word-translations">
                     {translations ? translations.map((translation,key) => <div key={key} className={"word-translation"}>{translation}</div> ) : ""}
                 </div>
                 <div className="button-save-zone">
-                    <button className="button-save" type="submit" onClick={() => saveWord()}>
+                    <button className="button-save" onClick={() => saveWord()}>
                         Save
                     </button>
                 </div>
