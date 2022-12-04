@@ -1,8 +1,22 @@
 import React from 'react';
 import "../../styles/word-zone/custom-input.scss"
-const CustomInput1 = ({placeholder, onChange,value,type,style, onKeyDown, onInput}) => {
+import {HiCheckCircle} from "react-icons/hi";
+const CustomInput1 = ({placeholder, onChange,value,type,style, onKeyDown,isIcon,iconFunc}) => {
     return (
-        <input className="custom-input" style={style} value ={value} type={type} placeholder={placeholder} onChange={onChange} onKeyDown={onKeyDown} onInput={onInput}/>
+
+        <div className="custom-input">
+            <input
+                className="custom-input-inner"
+                style={style}
+                value ={value}
+                type={type}
+                placeholder={placeholder}
+                onChange={onChange}
+                onKeyDown={onKeyDown}>
+            </input>
+            {isIcon ? <HiCheckCircle className={'icon'} onClick={()=> iconFunc()}/> : null}
+        </div>
+
     );
 };
 

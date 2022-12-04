@@ -100,7 +100,6 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
             addNewTranslation()
         }
     };
-    const onInputHandler = event => {console.log(event)};
     return (
         <div className={activeModal ? "word-modal active" : "word-modal"} onClick={()=>setActiveModal(false)}>
             <div className={activeModal ? "word-modal-content active" : "word-modal-content"} onClick={e => e.stopPropagation()}>
@@ -121,7 +120,8 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
                         placeholder={"Translation"}
                         type="text"
                         onKeyDown={handleKeyDown}
-                        onInput={onInputHandler}
+                        isIcon={true}
+                        iconFunc={addNewTranslation}
                 />
                 <div className="word-translations">
                     {translations ? translations.map((translation,key) => <div key={key} className={"word-translation"}>{translation}</div> ) : ""}

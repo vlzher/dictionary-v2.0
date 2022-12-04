@@ -13,6 +13,18 @@
   color: black;
   padding: 10px;
 }
-.custom-input:focus{
+.custom-input-inner{
+  height: 100%;
+  width: 85%;
+  border: 0;
+  outline: none;
+}
+.icon{
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+
+}
+.custom-input:focus-within{
   outline-color: rgba(0,0,0,0.8);
 }
