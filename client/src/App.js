@@ -8,7 +8,6 @@ function App() {
     <div className="app">
         <Routes>
             <Route path="/registration" element={<RegistrationForm/>}/>
-            {/*<Route path="/" element={<StartForm/>}/>*/}
             <Route path="/login" element={<LoginForm/>}/>
             <Route path="/words" element={<Dictionary/>}/>
             <Route path="*" element={<Navigate to={"/login"} replace/>}/>

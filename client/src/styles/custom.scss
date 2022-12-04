@@ -1,0 +1,26 @@
+@import "variables";
+.btn.btn-secondary {
+  background-color: $base-color6 !important;
+  border:0;
+}
+.btn.btn-primary {
+  background-color: $base-color2 !important;
+  border:0;
+
+}
+.btn.btn-secondary:hover {
+  background-color: $base-color5 !important;
+}
+.btn.btn-primary:hover {
+  background-color: $base-color3 !important;
+
+}
+.modal-header{
+  border-bottom: 0 !important;
+}
+
+.modal-footer{
+  border-top: 0 !important;
+}
+
+@import "~bootstrap/scss/bootstrap";

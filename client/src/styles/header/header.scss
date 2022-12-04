@@ -41,5 +41,22 @@
   height: 60px;
   justify-content: right;
   margin-right:2.5vw;
+  align-items: center;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .header-username{
+    display: none;
+  }
+  .left-div{
+    width: 70%
+  }
+  .right-div{
+    width: 30%
+  }
+
+
 
 }

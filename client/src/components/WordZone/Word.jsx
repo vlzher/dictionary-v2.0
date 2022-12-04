@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "../../styles/word-zone/word.scss"
+import CustomModal from "../CustomModal";
 const Word = ({original,transcription,translations, changeFunc, deleteFunc}) => {
 
 

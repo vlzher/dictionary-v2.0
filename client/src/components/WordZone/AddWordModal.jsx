@@ -13,6 +13,7 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
     const [original, setOriginal] = useState("");
     const [currentTranslation, setCurrentTranslation] = useState("")
     const [translations, setTranslations] = useState([])
+    const [isFull, setIsFull] = useState(false)
     useEffect(() => {
         if(!(Object.keys(currentWord).length === 0)){
             setWord(currentWord)
@@ -85,10 +86,16 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
         setCurrentTranslation("")
         setTranslations([])
         setWord({})
+        setIsFull(false)
         setActiveModal(false)
     }
     const handleKeyDown = event => {
         if (event.key ==="Enter") {
+            if(translations.length >= 8){
+                setIsFull(true)
+                return
+            }
+            setIsFull(false)
             addNewTranslation()
         }
     };
@@ -120,7 +127,9 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
                     <button className="button-save" onClick={() => saveWord()}>
                         Save
                     </button>
+                    {isFull ? <div className="full-translation">You can't add more than 8 translations</div> : ""}
                 </div>
+
 
 
             </div>
