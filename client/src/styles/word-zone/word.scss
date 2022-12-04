@@ -42,9 +42,11 @@
   width: 20%;
 }
 .word-meanings{
+  padding-top: 5px;
   height: 50%;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  text-align: left;
 }
 .word-right{
   width: 80px;
@@ -84,7 +86,7 @@
     height: 35%;
   }
   .word-meanings{
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
   .word-icon1{
     display: block;
