@@ -1,8 +1,8 @@
 import React from 'react';
 import "../../styles/word-zone/custom-input.scss"
-const CustomInput1 = ({placeholder, onChange,value,type,style, onKeyDown}) => {
+const CustomInput1 = ({placeholder, onChange,value,type,style, onKeyDown, onInput}) => {
     return (
-        <input className="custom-input" style={style} value ={value} type={type} placeholder={placeholder} onChange={onChange} onKeyDown={onKeyDown}/>
+        <input className="custom-input" style={style} value ={value} type={type} placeholder={placeholder} onChange={onChange} onKeyDown={onKeyDown} onInput={onInput}/>
     );
 };
 
