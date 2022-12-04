@@ -90,7 +90,7 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
         setActiveModal(false)
     }
     const handleKeyDown = event => {
-        console.log(event.key)
+        console.log(event)
         if (event.keyCode === 9 || event.keyCode === 13) {
             if(translations.length >= 8){
                 setIsFull(true)
