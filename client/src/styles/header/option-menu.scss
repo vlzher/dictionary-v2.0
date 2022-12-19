@@ -24,9 +24,9 @@
   padding: 40px 50px 100px;
   position: fixed;
   top: 0;
-  left: calc(-1 * max(400px,30%));
+  left: calc(-1 * max(300px,30%));
   background: $base-color2;
-  width:max(400px,30%);
+  width:max(300px,30%);
   height: 100%;
   z-index: -1;
   transition: 0.25s;
