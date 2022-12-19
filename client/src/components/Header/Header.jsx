@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import "../../styles/header/header.scss"
 import CustomButton1 from "./CustomButton1";
-import Language from "../../assets/language.svg";
+// import Language from "../../assets/language.svg";
 import Menu from "../../assets/menu.svg"
 import Logout from "../../assets/logout.svg"
 import {useSelector} from "react-redux";
@@ -28,7 +28,7 @@ const Header = () => {
             <div className="header">
                 <div className="left-div">
                     <CustomButton1 url={Menu} onClick={() => setActiveMenu(true)}/>
-                    <CustomButton1 url={Language} />
+                    {/*<CustomButton1 url={Language} />*/}
 
                 </div>
                 <CustomModal show={show}
