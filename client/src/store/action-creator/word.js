@@ -20,3 +20,8 @@ export const cleanWords = () => {
         dispatch({type: wordActions.CLEAN_WORDS})
     }
 }
+export const removeTranslation = (word,translationID) => {
+    return(dispatch) => {
+        dispatch({type: wordActions.REMOVE_TRANSLATION, payload:{word:word,translationID:translationID}})
+    }
+}

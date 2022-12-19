@@ -8,10 +8,12 @@ import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {useActions} from "../../hooks/useActions";
 import CustomModal from "../CustomModal";
+import OptionMenu from "./OptionMenu";
 const Header = () => {
     const user = useSelector(state => state.user)
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
+    const [activeMenu, setActiveMenu] = useState(false);
     const navigate = useNavigate()
     const {logout} = useActions()
 
@@ -22,10 +24,10 @@ const Header = () => {
 
     return (
         <div>
-
+            <OptionMenu active={activeMenu} setActive={setActiveMenu}/>
             <div className="header">
                 <div className="left-div">
-                    <CustomButton1 url={Menu} />
+                    <CustomButton1 url={Menu} onClick={() => setActiveMenu(true)}/>
                     <CustomButton1 url={Language} />
 
                 </div>

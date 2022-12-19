@@ -28,7 +28,7 @@
   margin-bottom: 2vh;
   border-radius: 20px;
   background-color: #FFFFFF;
-  height: max(550px,65vh);
+  height: max(550px,69vh);
   width: max(325px,25vw);
   transform: scale(0.5);
   transition: 0.4s all;
@@ -64,6 +64,18 @@
 
 
 }
+.word-translation:hover{
+  font-size: 0;
+  background: #ee0a0a;
+  cursor: pointer;
+}
+.word-translation:hover:after{
+  content: attr(data-hover);
+  font-size: 1.25rem;
+}
+
+
+
 .word-translations{
   display: grid;
   grid-template: repeat(4, 45px)/ 1fr 1fr;
@@ -74,6 +86,7 @@
 
 
 }
+
 .button-save-zone{
   display: flex;
   justify-content: center;

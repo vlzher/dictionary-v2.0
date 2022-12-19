@@ -59,7 +59,9 @@ const WordZone = () => {
         removeWord(id)
         const api = apiLink+`/api/words/${id}`
         const token = user.token;
-        await axios.delete(api,{headers: { Authorization: `Bearer ${token}` }}).then(()=>setShowModal(false))
+        await axios.delete(api,{headers: { Authorization: `Bearer ${token}` }})
+            .catch(() => navigate("/login"))
+        setShowModal(false)
 
     }
 

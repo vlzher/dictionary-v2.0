@@ -5,6 +5,7 @@ import {useActions} from "../../hooks/useActions";
 import axios from "axios";
 import {apiLink} from "../../assets/fakewords";
 import {useSelector} from "react-redux";
+
 const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
     const user = useSelector(state => state.user)
     const {addWord} = useActions();
@@ -12,6 +13,7 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
     const [word,setWord] = useState({});
     const [original, setOriginal] = useState("");
     const [currentTranslation, setCurrentTranslation] = useState("")
+    const [translationsToRemove, setTranslationsToRemove] = useState([])
     const [translations, setTranslations] = useState([])
     const [isFull, setIsFull] = useState(false)
     useEffect(() => {
@@ -20,29 +22,30 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
             setOriginal(currentWord.original)
             setTranslations(currentWord.translations)
         }
-
-
-
-
     },[currentWord])
 
+    function removeTranslation1(word,translation) {
+        setTranslations(translations.filter((item) => item !== translation))
+        setTranslationsToRemove([...translationsToRemove,translation])
+
+
+
+    }
     function saveWord() {
         try{
+            if(!translations){
+                setTranslations([])
+            }
             if(!(Object.keys(currentWord).length === 0)){
                 axios.put(`${apiLink}/api/words/${currentWord.id}`,{
+
                         "id":currentWord.id,
                         "original": original,
                         "transcription":"",
                         "translations": translations
                     },{headers:{Authorization:`Bearer ${user.token}`}}
-                )
-                addWord({
-                    "original": original,
-                    "translations": translations,
-                    "transcription": "",
-                    "id": currentWord.id,
+                ).then((res) => {addWord(res.data,position)})
 
-                },position)
             }
             else{
                 axios.post(`${apiLink}/api/words/`,{
@@ -50,13 +53,7 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
                         "transcription":"",
                         "translations": translations
                     },{headers:{Authorization:`Bearer ${user.token}`}}
-                )
-                addWord({
-                    "original": original,
-                    "translations": translations,
-                    "transcription": "",
-
-                },-1)
+                ).then((res) => {addWord(res.data,-1)})
 
             }
 
@@ -90,7 +87,6 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
         setActiveModal(false)
     }
     const handleKeyDown = event => {
-        console.log(event)
         if (event.keyCode === 9 || event.keyCode === 13) {
             if(translations.length >= 8){
                 setIsFull(true)
@@ -124,7 +120,11 @@ const AddWordModal = ({activeModal,setActiveModal,currentWord,position}) => {
                         iconFunc={addNewTranslation}
                 />
                 <div className="word-translations">
-                    {translations ? translations.map((translation,key) => <div key={key} className={"word-translation"}>{translation}</div> ) : ""}
+                    {translations ? translations.map((translation,key) =>
+                        <div key={key} className={"word-translation"} data-hover="X" onClick={() => removeTranslation1(word,translation)}>
+                            {translation}
+                        </div>
+                    ) : ""}
                 </div>
                 <div className="button-save-zone">
                     <button className="button-save" onClick={() => saveWord()}>

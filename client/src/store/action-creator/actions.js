@@ -3,7 +3,8 @@ export const wordActions = {
     ADD_WORDS: "ADD_WORDS",
     ADD_FAKE_WORDS:"ADD_FAKE_WORDS",
     REMOVE_WORD:"REMOVE_WORD",
-    CLEAN_WORDS:"CLEAN_WORDS"
+    CLEAN_WORDS:"CLEAN_WORDS",
+    REMOVE_TRANSLATION:"REMOVE_TRANSLATION",
 }
 
 export const userActions = {

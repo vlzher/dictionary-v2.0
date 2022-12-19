@@ -13,8 +13,6 @@ export const wordReducer = (state = initialState, action) => {
             else{
                 newState = [action.payload.word].concat(newState)
             }
-
-
             return newState
         case(wordActions.ADD_WORDS):
             newState = newState.concat(action.payload)
@@ -23,7 +21,12 @@ export const wordReducer = (state = initialState, action) => {
             return newState.filter(word => word.id!==action.payload);
         case(wordActions.CLEAN_WORDS):
             return []
+        case(wordActions.REMOVE_TRANSLATION):
+            const word = newState.find(word => word.original === action.payload.word.original)
+            console.log(word)
+            word.translations.splice(action.payload.translationID,1)
+            return newState
         default:
-            return state
+            return newState
     }
 }
